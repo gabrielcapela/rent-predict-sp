@@ -3,10 +3,7 @@ Forecast of property rental prices in the city of São Paulo using ML.
 
 ## LOADING...
 
-<p align="center">
-<img width=70% src="
-https://raw.githubusercontent.com/gabrielcapela/rent-predict-sp/main/images/crisp-dm.jpeg">
-</p>
+
 
 <p align="center">
 <img width=70% src="
