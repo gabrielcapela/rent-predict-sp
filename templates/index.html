@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora de Aluguel</title>
+  <style>
+    body { font-family: Arial; margin: 20px; max-width: 700px; }
+    label { display: block; margin-top: 15px; }
+    input, select { width: 100%; padding: 8px; margin-top: 5px; }
+    input[type=range] { width: 100%; }
+    button { margin-top: 20px; padding: 10px; width: 100%; }
+    #resultado { margin-top: 20px; font-size: 1.2em; font-weight: bold; }
+    .value-preview { font-size: 0.9em; color: #444; margin-top: 4px; }
+  </style>
+</head>
+<body>
+
+  <h2>Calculadora de Aluguel</h2>
+
+  <form id="formulario">
+
+    <label>Tamanho (Size) (m²):
+      <input type="range" name="Size" min="30" max="1000" value="100" oninput="sizeOut.value = this.value">
+      <div class="value-preview">Valor: <output id="sizeOut">100</output> m²</div>
+    </label>
+
+    <label>Quartos (Rooms):
+      <input type="range" name="Rooms" min="1" max="10" value="2" oninput="roomsOut.value = this.value">
+      <div class="value-preview">Valor: <output id="roomsOut">2</output></div>
+    </label>
+
+    <label>Banheiros (Toilets):
+      <input type="range" name="Toilets" min="1" max="8" value="1" oninput="toiletsOut.value = this.value">
+      <div class="value-preview">Valor: <output id="toiletsOut">1</output></div>
+    </label>
+
+    <label>Suítes (Suites):
+      <input type="range" name="Suites" min="0" max="6" value="1" oninput="suitesOut.value = this.value">
+      <div class="value-preview">Valor: <output id="suitesOut">1</output></div>
+    </label>
+
+    <label>Vagas de Estacionamento (Parking):
+      <input type="range" name="Parking" min="0" max="9" value="1" oninput="parkingOut.value = this.value">
+      <div class="value-preview">Valor: <output id="parkingOut">1</output></div>
+    </label>
+
+    <label>Elevador (Elevator):
+      <select name="Elevator">
+        <option value="0">Não</option>
+        <option value="1">Sim</option>
+      </select>
+    </label>
+
+    <label>Mobilhado (Furnished):
+      <select name="Furnished">
+        <option value="0">Não</option>
+        <option value="1">Sim</option>
+      </select>
+    </label>
+
+    <label>Piscina (Swimming Pool):
+      <select name="Swimming Pool">
+        <option value="0">Não</option>
+        <option value="1">Sim</option>
+      </select>
+    </label>
+
+    <label>Imóvel Novo (New):
+      <select name="New">
+        <option value="0">Não</option>
+        <option value="1">Sim</option>
+      </select>
+    </label>
+
+    <label>Distrito (District):
+      <select name="District">
+        <option value="Alto de Pinheiros/São Paulo">Alto de Pinheiros/São Paulo</option>
+        <option value="Anhanguera/São Paulo">Anhanguera/São Paulo</option>
+        <option value="Aricanduva/São Paulo">Aricanduva/São Paulo</option>
+        <option value="Artur Alvim/São Paulo">Artur Alvim/São Paulo</option>
+        <option value="Barra Funda/São Paulo">Barra Funda/São Paulo</option>
+        <option value="Bela Vista/São Paulo">Bela Vista/São Paulo</option>
+        <option value="Belém/São Paulo">Belém/São Paulo</option>
+        <option value="Bom Retiro/São Paulo">Bom Retiro/São Paulo</option>
+        <option value="Brasilândia/São Paulo">Brasilândia/São Paulo</option>
+        <option value="Brooklin/São Paulo">Brooklin/São Paulo</option>
+        <option value="Brás/São Paulo">Brás/São Paulo</option>
+        <option value="Butantã/São Paulo">Butantã/São Paulo</option>
+        <option value="Cachoeirinha/São Paulo">Cachoeirinha/São Paulo</option>
+        <option value="Cambuci/São Paulo">Cambuci/São Paulo</option>
+        <option value="Campo Belo/São Paulo">Campo Belo/São Paulo</option>
+        <option value="Campo Grande/São Paulo">Campo Grande/São Paulo</option>
+        <option value="Campo Limpo/São Paulo">Campo Limpo/São Paulo</option>
+        <option value="Cangaíba/São Paulo">Cangaíba/São Paulo</option>
+        <option value="Capão Redondo/São Paulo">Capão Redondo/São Paulo</option>
+        <option value="Carrão/São Paulo">Carrão/São Paulo</option>
+        <option value="Casa Verde/São Paulo">Casa Verde/São Paulo</option>
+        <option value="Cidade Ademar/São Paulo">Cidade Ademar/São Paulo</option>
+        <option value="Cidade Dutra/São Paulo">Cidade Dutra/São Paulo</option>
+        <option value="Cidade Líder/São Paulo">Cidade Líder/São Paulo</option>
+        <option value="Cidade Tiradentes/São Paulo">Cidade Tiradentes/São Paulo</option>
+        <option value="Consolação/São Paulo">Consolação/São Paulo</option>
+        <option value="Cursino/São Paulo">Cursino/São Paulo</option>
+        <option value="Ermelino Matarazzo/São Paulo">Ermelino Matarazzo/São Paulo</option>
+        <option value="Freguesia do Ó/São Paulo">Freguesia do Ó/São Paulo</option>
+        <option value="Grajaú/São Paulo">Grajaú/São Paulo</option>
+        <option value="Guaianazes/São Paulo">Guaianazes/São Paulo</option>
+        <option value="Iguatemi/São Paulo">Iguatemi/São Paulo</option>
+        <option value="Ipiranga/São Paulo">Ipiranga/São Paulo</option>
+        <option value="Itaim Bibi/São Paulo">Itaim Bibi/São Paulo</option>
+        <option value="Itaim Paulista/São Paulo">Itaim Paulista/São Paulo</option>
+        <option value="Itaquera/São Paulo">Itaquera/São Paulo</option>
+        <option value="Jabaquara/São Paulo">Jabaquara/São Paulo</option>
+        <option value="Jaguaré/São Paulo">Jaguaré/São Paulo</option>
+        <option value="Jaraguá/São Paulo">Jaraguá/São Paulo</option>
+        <option value="Jardim Helena/São Paulo">Jardim Helena/São Paulo</option>
+        <option value="Jardim Paulista/São Paulo">Jardim Paulista/São Paulo</option>
+        <option value="Jardim São Luis/São Paulo">Jardim São Luis/São Paulo</option>
+        <option value="Jardim Ângela/São Paulo">Jardim Ângela/São Paulo</option>
+        <option value="Jaçanã/São Paulo">Jaçanã/São Paulo</option>
+        <option value="José Bonifácio/São Paulo">José Bonifácio/São Paulo</option>
+        <option value="Lajeado/São Paulo">Lajeado/São Paulo</option>
+        <option value="Lapa/São Paulo">Lapa/São Paulo</option>
+        <option value="Liberdade/São Paulo">Liberdade/São Paulo</option>
+        <option value="Limão/São Paulo">Limão/São Paulo</option>
+        <option value="Mandaqui/São Paulo">Mandaqui/São Paulo</option>
+        <option value="Medeiros/São Paulo">Medeiros/São Paulo</option>
+        <option value="Moema/São Paulo">Moema/São Paulo</option>
+        <option value="Mooca/São Paulo">Mooca/São Paulo</option>
+        <option value="Morumbi/São Paulo">Morumbi/São Paulo</option>
+        <option value="Pari/São Paulo">Pari/São Paulo</option>
+        <option value="Parque do Carmo/São Paulo">Parque do Carmo/São Paulo</option>
+        <option value="Pedreira/São Paulo">Pedreira/São Paulo</option>
+        <option value="Penha/São Paulo">Penha/São Paulo</option>
+        <option value="Perdizes/São Paulo">Perdizes/São Paulo</option>
+        <option value="Pinheiros/São Paulo">Pinheiros/São Paulo</option>
+        <option value="Pirituba/São Paulo">Pirituba/São Paulo</option>
+        <option value="Ponte Rasa/São Paulo">Ponte Rasa/São Paulo</option>
+        <option value="Raposo Tavares/São Paulo">Raposo Tavares/São Paulo</option>
+        <option value="República/São Paulo">República/São Paulo</option>
+        <option value="Rio Pequeno/São Paulo">Rio Pequeno/São Paulo</option>
+        <option value="Sacomã/São Paulo">Sacomã/São Paulo</option>
+        <option value="Santa Cecília/São Paulo">Santa Cecília/São Paulo</option>
+        <option value="Santana/São Paulo">Santana/São Paulo</option>
+        <option value="Santo Amaro/São Paulo">Santo Amaro/São Paulo</option>
+        <option value="Sapopemba/São Paulo">Sapopemba/São Paulo</option>
+        <option value="Saúde/São Paulo">Saúde/São Paulo</option>
+        <option value="Socorro/São Paulo">Socorro/São Paulo</option>
+        <option value="São Lucas/São Paulo">São Lucas/São Paulo</option>
+        <option value="São Mateus/São Paulo">São Mateus/São Paulo</option>
+        <option value="São Miguel/São Paulo">São Miguel/São Paulo</option>
+        <option value="São Rafael/São Paulo">São Rafael/São Paulo</option>
+        <option value="Sé/São Paulo">Sé/São Paulo</option>
+        <option value="Tatuapé/São Paulo">Tatuapé/São Paulo</option>
+        <option value="Tremembé/São Paulo">Tremembé/São Paulo</option>
+        <option value="Tucuruvi/São Paulo">Tucuruvi/São Paulo</option>
+        <option value="Vila Andrade/São Paulo">Vila Andrade/São Paulo</option>
+        <option value="Vila Curuçá/São Paulo">Vila Curuçá/São Paulo</option>
+        <option value="Vila Formosa/São Paulo">Vila Formosa/São Paulo</option>
+        <option value="Vila Guilherme/São Paulo">Vila Guilherme/São Paulo</option>
+        <option value="Vila Jacuí/São Paulo">Vila Jacuí/São Paulo</option>
+        <option value="Vila Leopoldina/São Paulo">Vila Leopoldina/São Paulo</option>
+        <option value="Vila Madalena/São Paulo">Vila Madalena/São Paulo</option>
+        <option value="Vila Maria/São Paulo">Vila Maria/São Paulo</option>
+        <option value="Vila Mariana/São Paulo">Vila Mariana/São Paulo</option>
+        <option value="Vila Matilde/São Paulo">Vila Matilde/São Paulo</option>
+        <option value="Vila Olimpia/São Paulo">Vila Olimpia/São Paulo</option>
+        <option value="Vila Prudente/São Paulo">Vila Prudente/São Paulo</option>
+        <option value="Vila Sônia/São Paulo">Vila Sônia/São Paulo</option>
+        <option value="Água Rasa/São Paulo">Água Rasa/São Paulo</option>
+      </select>
+    </label>
+
+    <button type="submit">Calcular</button>
+  </form>
+
+  <div id="resultado"></div>
+
+  <script>
+    const form = document.getElementById('formulario');
+    const resultadoDiv = document.getElementById('resultado');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+
+      // Converte todos os valores numéricos
+      for (let key in data) {
+        if (!isNaN(data[key])) {
+          data[key] = Number(data[key]);
+        }
+      }
+
+      const response = await fetch('/predict', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      const result = await response.json();
+      resultadoDiv.textContent = result.predicted_rent !== undefined
+        ? `Aluguel estimado: R$ ${result.predicted_rent.toFixed(2)}`
+        : `Erro: ${result.error || 'Não foi possível calcular'}`;
+    });
+  </script>
+
+</body>
+</html>
