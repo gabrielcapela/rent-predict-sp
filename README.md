@@ -6,7 +6,7 @@ The final application is available at this [link](https://rent-predict-sp-b372d5
 This application uses Machine Learning techniques to predict the total housing cost (rent + condominium fees) of apartments in São Paulo, based on features such as location, size, number of rooms, and more.
 
 <div align="center">
-  <img width="90%" src="https://raw.githubusercontent.com/gabrielcapela/rent-predict-sp/main/images/carlos-aranda_unsplash.jpg"><br>
+  <img width="89%" src="https://raw.githubusercontent.com/gabrielcapela/rent-predict-sp/main/images/carlos-aranda_unsplash.jpg"><br>
   <p>
     Photo by 
     <a href="https://unsplash.com/pt-br/@carlosaranda?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Carlos Aranda</a> 
