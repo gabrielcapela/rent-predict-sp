@@ -44,6 +44,7 @@
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
       min-width: 300px;
+      max-width: 600px;
     }
 
     label {
@@ -85,14 +86,58 @@
         padding: 20px;
       }
     }
+
+        /* Campos <select> com opções curtas */
+    @media (min-width: 600px) {        
+        select[name="Rooms"],
+        select[name="Toilets"],
+        select[name="Suites"],
+        select[name="Parking"],
+        select[name="Elevator"],
+        select[name="Furnished"],
+        select[name="Swimming\ Pool"], /* Atenção: precisa escapar o espaço com \ */
+        select[name="New"] {
+        width: 80px;
+        }
+    }
+
+
+    @media (min-width: 600px) {        
+
+        select[name="District"] {
+        width: 250px;
+        }
+    }
+    .social a {
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Evita "resíduos" de estilo em torno da imagem */
+    }
+
+    .titulo {
+    font-size: 4.4em;
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    }
+
+
+
+
   </style>
 </head>
 <body>
 
-
-    <h1 style="font-size: 4.4em; text-align: left; margin-top: 60px; margin-left: 120px; margin-bottom: 10px; background-color: rgba(255, 255, 255, 0.7); display: inline-block; padding: 10px 20px; border-radius: 8px; box-shadow: 0 0 8px rgba(0,0,0,0.1);">
+    <h1 class="titulo">
         Calculadora<br> de Aluguel
-      </h1>
+    </h1>
 
 
 
@@ -102,27 +147,38 @@
       <form id="formulario">
         <label>Tamanho (Size) (m²):
           <input type="range" name="Size" min="30" max="1000" value="100" oninput="sizeOut.value = this.value">
-          <div class="value-preview">Valor: <output id="sizeOut">100</output> m²</div>
+          <div class="value-preview"> <output id="sizeOut">100</output> m²</div>
         </label>
 
         <label>Quartos (Rooms):
-          <input type="range" name="Rooms" min="1" max="10" value="2" oninput="roomsOut.value = this.value">
-          <div class="value-preview">Valor: <output id="roomsOut">2</output></div>
+            <select name="Rooms">
+              {% for i in range(1, 11) %}
+                <option value="{{ i }}">{{ i }}</option>
+              {% endfor %}
+            </select>
         </label>
 
         <label>Banheiros (Toilets):
-          <input type="range" name="Toilets" min="1" max="8" value="1" oninput="toiletsOut.value = this.value">
-          <div class="value-preview">Valor: <output id="toiletsOut">1</output></div>
+            <select name="Toilets">
+              {% for i in range(1, 9) %}
+                <option value="{{ i }}">{{ i }}</option>
+              {% endfor %}
+            </select>
         </label>
 
         <label>Suítes (Suites):
-          <input type="range" name="Suites" min="0" max="6" value="1" oninput="suitesOut.value = this.value">
-          <div class="value-preview">Valor: <output id="suitesOut">1</output></div>
+            <select name="Suites">
+              {% for i in range(0, 7) %}
+                <option value="{{ i }}">{{ i }}</option>
+              {% endfor %}
+            </select>
         </label>
-
         <label>Vagas de Estacionamento (Parking):
-          <input type="range" name="Parking" min="0" max="9" value="1" oninput="parkingOut.value = this.value">
-          <div class="value-preview">Valor: <output id="parkingOut">1</output></div>
+            <select name="Parking">
+                {% for i in range(0, 10) %}
+                <option value="{{ i }}">{{ i }}</option>
+                {% endfor %}
+            </select>
         </label>
 
         <label>Elevador (Elevator):
@@ -262,34 +318,43 @@
     <!-- Sobre o projeto -->
     <div class="about-section">
         <div class="about-section">
-            <h3>Sobre o projeto</h3>
+            <h2>Sobre o projeto</h2>
             <a href="https://github.com/gabrielcapela/rent-predict-sp/blob/main/README.md" target="_blank">
                 <img src="https://img.shields.io/badge/README-Documentation-informational?style=for-the-badge&logo=readthedocs&logoColor=white" alt="README">
             </a>
       
-            <p>Esta aplicação utiliza técnicas de <strong>Machine Learning</strong> para prever o valor de moradia (aluguel+condomínio) de apartamentos na cidade de São Paulo, com base em atributos como localização, metragem, número de quartos, vagas de estacionamento, entre outros fatores relevantes. </p>
-            
-            <p>Os dados utilizados foram compilados em 2019 e tratados para o treinamento de um modelo preditivo. A aplicação está hospedada na nuvem, por meio da plataforma Heroku.</p>
-            
-            <p>Este é um projeto pessoal desenvolvido por <strong>Gabriel Capela</strong>.</p>
-            <p>Fique à vontade para enviar dúvidas, sugestões ou feedbacks:</p>
+            <p>
+                Esta aplicação utiliza técnicas de Machine Learning para prever o valor de moradia (aluguel + condomínio) de apartamentos na cidade de São Paulo.
+              </p>
+              <p>
+                Mais de 7.000 imóveis foram analisados com base em atributos como localização, metragem, número de quartos, vagas de estacionamento, entre outros. Esses dados foram utilizados para treinar um modelo preditivo capaz de estimar, automaticamente, o valor total a ser pago com base nas informações fornecidas pelo usuário.
+              </p>
+              <p>
+                A aplicação está hospedada na nuvem, por meio da plataforma Heroku, e foi desenvolvida como um projeto pessoal por Gabriel Capela.
+              </p>
+              <p>
+                Este projeto está em constante aprimoramento e utiliza dados coletados em 2019, o que traz algumas limitações naturais ao escopo das informações disponíveis. Para mais detalhes técnicos, consulte o repositório no link acima.
+              </p>
+              <p>
+                Fique à vontade para enviar dúvidas, sugestões ou feedbacks!
+              </p>
             
             <div style="margin-top: 20px;">
-              <a href="https://www.linkedin.com/in/gabrielcapela" target="_blank">
-                <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
-              </a>
-              <a href="https://github.com/gabrielcapela" target="_blank">
-                <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
-              </a>
-              <br>
-              <br>
-            
-              <a href="mailto:gabrielcapela@ufms.br">
-                <img src="https://img.shields.io/badge/Fale_comigo-2f2f2f?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
-              </a>
-              
+                <div class="social">
+                    <a href="mailto:gabrielcapela@ufms.br" title="Email">
+                      <img src="{{ url_for('static', filename='icons/email.svg') }}" alt="Email" width="35">
+                    </a>&nbsp;&nbsp;&nbsp;
+                    <a href="https://github.com/gabrielcapela" title="GitHub" target="_blank">
+                      <img src="{{ url_for('static', filename='icons/github.svg') }}" alt="GitHub" width="35">
+                    </a>&nbsp;&nbsp;&nbsp;
+                    <a href="https://www.linkedin.com/in/gabrielcapela" title="LinkedIn" target="_blank">
+                      <img src="{{ url_for('static', filename='icons/linkedin.svg') }}" alt="LinkedIn" width="35">
+                    </a>
+                  </div>
             </div>
-          </div>
+              
+        </div>
+    </div>
           
       
 
