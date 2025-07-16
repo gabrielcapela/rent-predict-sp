@@ -1,12 +1,25 @@
 # importar os pacotes necessários
 import pandas as pd
 import numpy as np
-from flask import Flask, jsonify, request, render_template
+from flask import Flask, jsonify, request, render_template, redirect, url_for
 from flask_restful import Resource, Api
+from flask_babel import Babel, gettext
 from joblib import load
+
 
 # instanciar Flask object
 app = Flask(__name__)
+
+
+# Languages configuration
+app.config['BABEL_DEFAULT_LOCALE'] = 'pt'
+app.config['BABEL_SUPPORTED_LOCALES'] = ['en', 'pt']
+babel = Babel(app)
+
+
+@babel.localeselector
+def get_locale():
+    return request.args.get('lang') or 'pt'
 
 # api
 api = Api(app)
@@ -49,3 +62,8 @@ def home():
 
 if __name__ == '__main__':
     app.run()
+
+
+
+
+

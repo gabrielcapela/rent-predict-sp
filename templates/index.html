@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="{{ get_locale() }}">
 <head>
   <meta charset="UTF-8">
-  <title>Calculadora de Aluguel</title>
-
+  <title>{{ _('Calculadora de Aluguel') }}</title>
+  <div style="position: fixed; top: 20px; right: 20px;">
+      <a href="{{ url_for('index', lang='pt') }}"><img src="/static/br.svg" alt="PT" width="40"></a>
+      <a href="{{ url_for('index', lang='en') }}"><img src="/static/us.svg" alt="EN" width="40"></a>
+  </div>
   <style>
     body {
       font-family: Arial;
@@ -87,15 +90,15 @@
       }
     }
 
-        /* Campos <select> com opções curtas */
-    @media (min-width: 600px) {        
+    /* Field select with short options */
+    @media (min-width: 600px) {
         select[name="Rooms"],
         select[name="Toilets"],
         select[name="Suites"],
         select[name="Parking"],
         select[name="Elevator"],
         select[name="Furnished"],
-        select[name="Swimming\ Pool"], /* Atenção: precisa escapar o espaço com \ */
+        select[name="Swimming\ Pool"], /* Attention: It is necessary to escape the space with \ */
         select[name="New"] {
         width: 80px;
         }
@@ -110,7 +113,7 @@
     }
     .social a {
     text-decoration: none; /* Remove underline */
-    display: inline-block; /* Evita "resíduos" de estilo em torno da imagem */
+    display: inline-block; /* Avoid "residues" of style around the image */
     }
 
     .titulo {
@@ -136,7 +139,7 @@
 <body>
 
     <h1 class="titulo">
-        Calculadora<br> de Aluguel
+        {{ _('Calculadora de Aluguel') }}
     </h1>
 
 
@@ -145,12 +148,12 @@
     <!-- Formulário -->
     <div class="form-section">
       <form id="formulario">
-        <label>Tamanho (Size) (m²):
+        <label>{{ _('Tamanho(m²):') }}
           <input type="range" name="Size" min="30" max="1000" value="100" oninput="sizeOut.value = this.value">
           <div class="value-preview"> <output id="sizeOut">100</output> m²</div>
         </label>
 
-        <label>Quartos (Rooms):
+        <label>{{ _('Quartos:') }}
             <select name="Rooms">
               {% for i in range(1, 11) %}
                 <option value="{{ i }}">{{ i }}</option>
@@ -158,7 +161,7 @@
             </select>
         </label>
 
-        <label>Banheiros (Toilets):
+        <label>{{ _('Banheiros:') }}
             <select name="Toilets">
               {% for i in range(1, 9) %}
                 <option value="{{ i }}">{{ i }}</option>
@@ -166,14 +169,14 @@
             </select>
         </label>
 
-        <label>Suítes (Suites):
+        <label>{{ _('Suítes:') }}
             <select name="Suites">
               {% for i in range(0, 7) %}
                 <option value="{{ i }}">{{ i }}</option>
               {% endfor %}
             </select>
         </label>
-        <label>Vagas de Estacionamento (Parking):
+        <label>{{ _('Vagas de Estacionamento:') }}
             <select name="Parking">
                 {% for i in range(0, 10) %}
                 <option value="{{ i }}">{{ i }}</option>
@@ -181,35 +184,35 @@
             </select>
         </label>
 
-        <label>Elevador (Elevator):
+        <label>{{ _('Elevador:') }}
           <select name="Elevator">
-            <option value="0">Não</option>
-            <option value="1">Sim</option>
+            <option value="0">{{ _('Não') }}</option>
+            <option value="1">{{ _('Sim') }}</option>
           </select>
         </label>
 
-        <label>Mobilhado (Furnished):
+        <label>{{ _('Mobilhado:') }}
           <select name="Furnished">
-            <option value="0">Não</option>
-            <option value="1">Sim</option>
+            <option value="0">{{ _('Não') }}</option>
+            <option value="1">{{ _('Sim') }}</option>
           </select>
         </label>
 
-        <label>Piscina (Swimming Pool):
+        <label>{{ _('Piscina:') }}
           <select name="Swimming Pool">
-            <option value="0">Não</option>
-            <option value="1">Sim</option>
+            <option value="0">{{ _('Não') }}</option>
+            <option value="1">{{ _('Sim') }}</option>
           </select>
         </label>
 
-        <label>Imóvel Novo (New):
+        <label>{{ _('Imóvel Novo:') }}
           <select name="New">
-            <option value="0">Não</option>
-            <option value="1">Sim</option>
+            <option value="0">{{ _('Não') }}</option>
+            <option value="1">{{ _('Sim') }}</option>
           </select>
         </label>
 
-        <label>Distrito (District):
+        <label>{{ _('Distrito:') }}
           <select name="District">
             <option value="Alto de Pinheiros/São Paulo">Alto de Pinheiros/São Paulo</option>
             <option value="Anhanguera/São Paulo">Anhanguera/São Paulo</option>
@@ -309,34 +312,34 @@
           </select>
         </label>
 
-        <button type="submit">Calcular</button>
+        <button type="submit">{{ _('Calcular') }}</button>
       </form>
 
       <div id="resultado"></div>
     </div>
 
-    <!-- Sobre o projeto -->
+    <!-- About the project -->
     <div class="about-section">
         <div class="about-section">
-            <h2>Sobre o projeto</h2>
+            <h2>{{ _('Sobre o projeto') }}</h2>
             <a href="https://github.com/gabrielcapela/rent-predict-sp/blob/main/README.md" target="_blank">
                 <img src="https://img.shields.io/badge/README-Documentation-informational?style=for-the-badge&logo=readthedocs&logoColor=white" alt="README">
             </a>
       
             <p>
-                Esta aplicação utiliza técnicas de Machine Learning para prever o valor de moradia (aluguel + condomínio) de apartamentos na cidade de São Paulo.
+                {{ _('Esta aplicação utiliza técnicas de Machine Learning para prever o valor de moradia (aluguel + condomínio) de apartamentos na cidade de São Paulo.') }}
               </p>
               <p>
-                Mais de 7.000 imóveis foram analisados com base em atributos como localização, metragem, número de quartos, vagas de estacionamento, entre outros. Esses dados foram utilizados para treinar um modelo preditivo capaz de estimar, automaticamente, o valor total a ser pago com base nas informações fornecidas pelo usuário.
+                {{ _('Mais de 7.000 imóveis foram analisados com base em atributos como localização, metragem, número de quartos, vagas de estacionamento, entre outros. Esses dados foram utilizados para treinar um modelo preditivo capaz de estimar, automaticamente, o valor total a ser pago com base nas informações fornecidas pelo usuário.') }}
               </p>
               <p>
-                A aplicação está hospedada na nuvem, por meio da plataforma Heroku, e foi desenvolvida como um projeto pessoal por Gabriel Capela.
+                {{ _('A aplicação está hospedada na nuvem, por meio da plataforma Heroku, e foi desenvolvida como um projeto pessoal por Gabriel Capela.') }}
               </p>
               <p>
-                Este projeto está em constante aprimoramento e utiliza dados coletados em 2019, o que traz algumas limitações naturais ao escopo das informações disponíveis. Para mais detalhes técnicos, consulte o repositório no link acima.
+                {{ _('Este projeto está em constante aprimoramento e utiliza dados coletados em 2019, o que traz algumas limitações naturais ao escopo das informações disponíveis. Para mais detalhes técnicos, consulte o repositório no link acima.') }}
               </p>
               <p>
-                Fique à vontade para enviar dúvidas, sugestões ou feedbacks!
+                {{ _('Fique à vontade para enviar dúvidas, sugestões ou feedbacks!') }}
               </p>
             
             <div style="margin-top: 20px;">
