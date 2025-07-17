@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-07-16 17:41-0300\n"
-"PO-Revision-Date: 2025-07-16 17:41-0300\n"
+"POT-Creation-Date: 2025-07-16 21:15-0300\n"
+"PO-Revision-Date: 2025-07-16 21:20-0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: pt\n"
 "Language-Team: pt <LL@li.org>\n"
@@ -17,4 +17,99 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
+
+#: templates/index.html:5 templates/index.html:142
+msgid "Calculadora de Aluguel"
+msgstr ""
+
+#: templates/index.html:151
+msgid "Tamanho(m²):"
+msgstr ""
+
+#: templates/index.html:156
+msgid "Quartos:"
+msgstr ""
+
+#: templates/index.html:164
+msgid "Banheiros:"
+msgstr ""
+
+#: templates/index.html:172
+msgid "Suítes:"
+msgstr ""
+
+#: templates/index.html:179
+msgid "Vagas de Estacionamento:"
+msgstr ""
+
+#: templates/index.html:187
+msgid "Elevador:"
+msgstr ""
+
+#: templates/index.html:189 templates/index.html:196 templates/index.html:203
+#: templates/index.html:210
+msgid "Não"
+msgstr ""
+
+#: templates/index.html:190 templates/index.html:197 templates/index.html:204
+#: templates/index.html:211
+msgid "Sim"
+msgstr ""
+
+#: templates/index.html:194
+msgid "Mobilhado:"
+msgstr ""
+
+#: templates/index.html:201
+msgid "Piscina:"
+msgstr ""
+
+#: templates/index.html:208
+msgid "Imóvel Novo:"
+msgstr ""
+
+#: templates/index.html:215
+msgid "Distrito:"
+msgstr ""
+
+#: templates/index.html:315
+msgid "Calcular"
+msgstr ""
+
+#: templates/index.html:324
+msgid "Sobre o projeto"
+msgstr ""
+
+#: templates/index.html:330
+msgid ""
+"Esta aplicação utiliza técnicas de Machine Learning para prever o valor "
+"de moradia (aluguel + condomínio) de apartamentos na cidade de São Paulo."
+msgstr ""
+
+#: templates/index.html:333
+msgid ""
+"Mais de 7.000 imóveis foram analisados com base em atributos como "
+"localização, metragem, número de quartos, vagas de estacionamento, entre "
+"outros. Esses dados foram utilizados para treinar um modelo preditivo "
+"capaz de estimar, automaticamente, o valor total a ser pago com base nas "
+"informações fornecidas pelo usuário."
+msgstr ""
+
+#: templates/index.html:336
+msgid ""
+"A aplicação está hospedada na nuvem, por meio da plataforma Heroku, e foi"
+" desenvolvida como um projeto pessoal por Gabriel Capela."
+msgstr ""
+
+#: templates/index.html:339
+msgid ""
+"Este projeto está em constante aprimoramento e utiliza dados coletados em"
+" 2019, o que traz algumas limitações naturais ao escopo das informações "
+"disponíveis. Para mais detalhes técnicos, consulte o repositório no link "
+"acima."
+msgstr ""
+
+#: templates/index.html:342
+msgid "Fique à vontade para enviar dúvidas, sugestões ou feedbacks!"
+msgstr ""
 

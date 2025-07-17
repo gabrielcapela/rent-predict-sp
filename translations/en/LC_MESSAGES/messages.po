@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-07-16 17:41-0300\n"
-"PO-Revision-Date: 2025-07-16 17:41-0300\n"
+"POT-Creation-Date: 2025-07-16 21:15-0300\n"
+"PO-Revision-Date: 2025-07-16 21:20-0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
 "Language-Team: en <LL@li.org>\n"
@@ -18,3 +18,108 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
+#: templates/index.html:5 templates/index.html:142
+msgid "Calculadora de Aluguel"
+msgstr "Rent Calculator"
+
+#: templates/index.html:151
+msgid "Tamanho(m²):"
+msgstr "Size (m²):"
+
+#: templates/index.html:156
+msgid "Quartos:"
+msgstr "Rooms:"
+
+#: templates/index.html:164
+msgid "Banheiros:"
+msgstr "Bathrooms:"
+
+#: templates/index.html:172
+msgid "Suítes:"
+msgstr "Suites:"
+
+#: templates/index.html:179
+msgid "Vagas de Estacionamento:"
+msgstr "Parking Spots:"
+
+#: templates/index.html:187
+msgid "Elevador:"
+msgstr "Elevator:"
+
+#: templates/index.html:189 templates/index.html:196 templates/index.html:203
+#: templates/index.html:210
+msgid "Não"
+msgstr "No"
+
+#: templates/index.html:190 templates/index.html:197 templates/index.html:204
+#: templates/index.html:211
+msgid "Sim"
+msgstr "Yes"
+
+#: templates/index.html:194
+msgid "Mobilhado:"
+msgstr "Furnished:"
+
+#: templates/index.html:201
+msgid "Piscina:"
+msgstr "Swimming Pool:"
+
+#: templates/index.html:208
+msgid "Imóvel Novo:"
+msgstr "New Property:"
+
+#: templates/index.html:215
+msgid "Distrito:"
+msgstr "District:"
+
+#: templates/index.html:315
+msgid "Calcular"
+msgstr "Calculate"
+
+#: templates/index.html:324
+msgid "Sobre o projeto"
+msgstr "About the Project"
+
+#: templates/index.html:330
+msgid ""
+"Esta aplicação utiliza técnicas de Machine Learning para prever o valor "
+"de moradia (aluguel + condomínio) de apartamentos na cidade de São Paulo."
+msgstr ""
+"This application uses Machine Learning techniques to predict the total cost "
+"of housing (rent + condo fees) for apartments in São Paulo."
+
+#: templates/index.html:333
+msgid ""
+"Mais de 7.000 imóveis foram analisados com base em atributos como "
+"localização, metragem, número de quartos, vagas de estacionamento, entre "
+"outros. Esses dados foram utilizados para treinar um modelo preditivo "
+"capaz de estimar, automaticamente, o valor total a ser pago com base nas "
+"informações fornecidas pelo usuário."
+msgstr ""
+"Over 7,000 properties were analyzed based on attributes such as location, "
+"size, number of rooms, parking spaces, and more. These data were used to "
+"train a predictive model capable of automatically estimating the total "
+"cost based on user input."
+
+#: templates/index.html:336
+msgid ""
+"A aplicação está hospedada na nuvem, por meio da plataforma Heroku, e foi"
+" desenvolvida como um projeto pessoal por Gabriel Capela."
+msgstr ""
+"This application is hosted in the cloud via the Heroku platform and was "
+"developed as a personal project by Gabriel Capela."
+
+#: templates/index.html:339
+msgid ""
+"Este projeto está em constante aprimoramento e utiliza dados coletados em"
+" 2019, o que traz algumas limitações naturais ao escopo das informações "
+"disponíveis. Para mais detalhes técnicos, consulte o repositório no link "
+"acima."
+msgstr ""
+"This project is under continuous improvement and uses data collected in 2019, "
+"which naturally limits the scope of the available information. For technical "
+"details, please check the repository linked above."
+
+#: templates/index.html:342
+msgid "Fique à vontade para enviar dúvidas, sugestões ou feedbacks!"
+msgstr "Feel free to send questions, suggestions, or feedback!"

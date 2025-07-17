@@ -11,15 +11,27 @@ from joblib import load
 app = Flask(__name__)
 
 
+
+def get_locale():
+    lang = request.args.get('lang')
+    if lang in ['pt', 'en']:
+        return lang
+    return 'pt'
+
+@app.context_processor
+def inject_get_locale():
+    return dict(get_locale=get_locale)
+
+
 # Languages configuration
 app.config['BABEL_DEFAULT_LOCALE'] = 'pt'
 app.config['BABEL_SUPPORTED_LOCALES'] = ['en', 'pt']
-babel = Babel(app)
+babel = Babel(app, locale_selector=get_locale)
 
 
-@babel.localeselector
-def get_locale():
-    return request.args.get('lang') or 'pt'
+
+
+
 
 # api
 api = Api(app)
